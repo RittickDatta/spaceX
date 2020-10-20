@@ -1,18 +1,30 @@
 import * as actionTypes from '../actions/actionTypes';
 
 let initalState = {
-    launchPrograms : [],
+    launchPrograms : null,
     launchYear: '2006',
     successfullLaunch: true,
-    successfullLanding: true
+    successfullLanding: true,
+    loading: false
 }
 
 const reducer = (state = initalState, action) => {
     switch(action.type){
-        case actionTypes.INIT_PROGRAMS:
+        case actionTypes.INIT_PROGRAMS_START:
             return {
                 ...state,
-                launchPrograms: action.launch_programs
+                loading: true
+            }
+        case actionTypes.INIT_PROGRAMS_SUCCESS:
+            return {
+                ...state,
+                launchPrograms: action.launchedPrograms,
+                loading: false
+            }
+        case actionTypes.INIT_PROGRAMS_FAILURE:
+            return {
+                ...state,
+                loading: false
             }
         case actionTypes.FILTER_BY_YEAR:
             return {
