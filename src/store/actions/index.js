@@ -3,7 +3,7 @@ export {
 } from './filterByLaunchYear';
 
 export {
-    filterBySuccessfulLaunch
+    filterBySuccessfullLaunch
 } from './filterBySuccessfulLaunch';
 
 export {

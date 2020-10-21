@@ -1,7 +1,16 @@
 import * as actionTypes from '../actions/actionTypes';
 
+const initalYear = 2006;
+const numberOfYears = new Date().getFullYear() - initalYear;
+const years = [];
+for(let i = 0; i < numberOfYears+1; i++){
+    years.push(initalYear + i);
+}
+
+
 let initalState = {
-    launchPrograms : null,
+    years: years,
+    launchPrograms : [],
     launchYear: '2006',
     successfullLaunch: true,
     successfullLanding: true,
@@ -27,18 +36,40 @@ const reducer = (state = initalState, action) => {
                 loading: false
             }
         case actionTypes.FILTER_BY_YEAR:
+            let updatedLaunchPrograms = [];
+            for(let prog of state.launchPrograms){
+                if(prog.launch_year === action.year){
+                    updatedLaunchPrograms.push(prog);
+                }
+            }
+            console.log(updatedLaunchPrograms);
             return {
                 ...state,
+                launchPrograms: updatedLaunchPrograms,
                 launchYear: action.year
             };
         case actionTypes.FILTER_BY_SUCCESSFUL_LAUNCH:
+            let updatedLaunchProgramsLaunch = [];
+            for(let prog of state.launchPrograms){
+                if( prog.launch_success){
+                    updatedLaunchProgramsLaunch.push(prog)
+                }
+            }
             return {
                 ...state,
+                launchPrograms: updatedLaunchProgramsLaunch,
                 successfullLaunch: action.wasLaunchSuccessful
             };
         case actionTypes.FILTER_BY_SUCCESSFUL_LANDING:
+            let updatedLaunchProgramsLanding = [];
+            for (let prog of state.launchPrograms){
+                if(prog.rocket.first_stage.cores[0].land_success){
+                    updatedLaunchProgramsLanding.push(prog)
+                }
+            }
             return {
                 ...state,
+                launchPrograms: updatedLaunchProgramsLanding,
                 successfullLanding: action.wasLandingSuccessful
             };
         default:
