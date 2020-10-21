@@ -1,0 +1,40 @@
+.filters {
+    width: 75%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 10px;
+}
+
+.filters_title {
+    font-weight: bold;
+}
+
+.FilterTitle{
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #c7c7c7;
+    border-bottom-width: 70%;
+}
+
+.launch_year_block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.changeDirection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.successful_launch_block {
+    
+}
+
+.successful_landing_block {
+
+}

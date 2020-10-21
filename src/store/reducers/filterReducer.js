@@ -12,8 +12,8 @@ let initalState = {
   launchPrograms: [],
   launchProgramsBackup: [],
   launchYear: '2006',
-  successfullLaunch: true,
-  successfullLanding: true,
+  successfullLaunch: false,
+  successfullLanding: false,
   loading: false,
 };
 
@@ -51,11 +51,20 @@ const reducer = (state = initalState, action) => {
       };
     case actionTypes.FILTER_BY_SUCCESSFUL_LAUNCH:
       let updatedLaunchProgramsLaunch = [];
-      for (let prog of state.launchPrograms) {
-        if (prog.launch_success) {
-          updatedLaunchProgramsLaunch.push(prog);
+      if (action.wasLaunchSuccessful) {
+        for (let prog of state.launchPrograms) {
+          if (prog.launch_success) {
+            updatedLaunchProgramsLaunch.push(prog);
+          }
+        }
+      } else {
+        for (let prog of state.launchPrograms) {
+          if (!prog.launch_success) {
+            updatedLaunchProgramsLaunch.push(prog);
+          }
         }
       }
+
       return {
         ...state,
         launchPrograms: updatedLaunchProgramsLaunch,
@@ -63,11 +72,20 @@ const reducer = (state = initalState, action) => {
       };
     case actionTypes.FILTER_BY_SUCCESSFUL_LANDING:
       let updatedLaunchProgramsLanding = [];
-      for (let prog of state.launchPrograms) {
-        if (prog.rocket.first_stage.cores[0].land_success) {
-          updatedLaunchProgramsLanding.push(prog);
+      if (action.wasLandingSuccessful) {
+        for (let prog of state.launchPrograms) {
+          if (prog.rocket.first_stage.cores[0].land_success) {
+            updatedLaunchProgramsLanding.push(prog);
+          }
+        }
+      } else {
+        for (let prog of state.launchPrograms) {
+          if (!prog.rocket.first_stage.cores[0].land_success) {
+            updatedLaunchProgramsLanding.push(prog);
+          }
         }
       }
+
       return {
         ...state,
         launchPrograms: updatedLaunchProgramsLanding,

@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import LaunchPrograms from './containers/LaunchPrograms/LaunchPrograms';
-import Filter from './containers/Filter/Filter';
+import Layout from './containers/Layout/Layout';
 
 function App() {
   return (
     <div className="App">
-      <Filter />
-      <LaunchPrograms />
+      <Layout />
     </div>
   );
 }

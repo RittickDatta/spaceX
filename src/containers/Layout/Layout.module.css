@@ -1,0 +1,35 @@
+header {
+  background-color: #c7c7c7;
+  height: 10vh;
+}
+
+main {
+  background-color: #c7c7c7;
+  height: 80vh;
+}
+
+footer {
+  background-color: #c7c7c7;
+  height: 10vh;
+}
+
+.nav {
+  width: 100%;
+  background-color: #c7c7c7;
+  text-align: left;
+}
+
+.container {
+    display: flex;
+}
+
+.filter_container {
+    width: 25%;
+}
+
+.launchPrograms_container {
+    width: 75%;
+}
+
+.developedBy {
+}
