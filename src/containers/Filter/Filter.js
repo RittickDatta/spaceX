@@ -16,6 +16,9 @@ class Filter extends Component {
         <button onClick={() => this.props.onFilterBySuccessfulLanding(false)}>
             Filter Landing
         </button>
+        <button onClick={() => this.props.onClearFilters()}>
+            Clear Filters
+        </button>
       </React.Fragment>
     );
   }
@@ -32,7 +35,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onFilterByYear: (year) => dispatch(actions.filterByLaunchYear(year)),
     onFilterBySuccessfulLaunch: (launchedSuccessfully) => dispatch(actions.filterBySuccessfullLaunch(launchedSuccessfully)),
-    onFilterBySuccessfulLanding: (landedSuccessfully => dispatch(actions.filterBySuccessfullLanding(landedSuccessfully)))
+    onFilterBySuccessfulLanding: (landedSuccessfully) => dispatch(actions.filterBySuccessfullLanding(landedSuccessfully)),
+    onClearFilters: () => dispatch(actions.clearFilters())
   };
 };
 

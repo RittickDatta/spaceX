@@ -8,8 +8,12 @@ export {
 
 export {
     filterBySuccessfullLanding
-} from './filterBySuccessfulLanding'
+} from './filterBySuccessfulLanding';
 
 export {
     initializeLaunchPrograms
-} from './initailizeLaunchPrograms'
+} from './initailizeLaunchPrograms';
+
+export {
+    clearFilters
+} from './clearFilters';
