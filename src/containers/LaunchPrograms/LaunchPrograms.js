@@ -13,10 +13,20 @@ class LaunchPrograms extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        launchPrograms: state.launchPrograms,
+        launchYear: state.launchYear,
+        successfullLaunch: state.successfullLaunch,
+        successfullLanding: state.successfullLanding,
+        loading: state.loading
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         onInit: () => dispatch(actions.initializeLaunchPrograms())
     }
 }
 
-export default connect(null, mapDispatchToProps)(LaunchPrograms);
+export default connect(mapStateToProps, mapDispatchToProps)(LaunchPrograms);

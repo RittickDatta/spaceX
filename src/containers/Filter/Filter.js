@@ -27,7 +27,10 @@ class Filter extends Component {
 const mapStateToProps = (state) => {
   return {
     years: state.years,
-    year: state.launchYear
+    year: state.launchYear,
+    successfullLaunch: state.successfullLaunch,
+    successfullLanding: state.successfullLanding,
+    loading: state.loading
   };
 };
 
