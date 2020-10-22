@@ -42,18 +42,6 @@ class Filter extends Component {
 
     return (
       <React.Fragment>
-        <button onClick={() => this.props.onFilterByYear('2007')}>
-          Filter Year
-        </button>
-        <button onClick={() => this.props.onFilterBySuccessfulLaunch(true)}>
-          Filter Launch
-        </button>
-        <button onClick={() => this.props.onFilterBySuccessfulLanding(false)}>
-          Filter Landing
-        </button>
-        <button onClick={() => this.props.onClearFilters()}>
-          Clear Filters
-        </button>
 
         <div className={classes.filters}>
           <div className={classes.filters_title}>FILTERS</div>
