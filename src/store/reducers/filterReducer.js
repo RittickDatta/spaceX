@@ -15,6 +15,7 @@ let initalState = {
   successfullLaunch: false,
   successfullLanding: false,
   loading: false,
+  firstLoad: true
 };
 
 const reducer = (state = initalState, action) => {
@@ -30,6 +31,7 @@ const reducer = (state = initalState, action) => {
         launchPrograms: action.launchedPrograms,
         launchProgramsBackup: action.launchedPrograms,
         loading: false,
+        firstLoad: false
       };
     case actionTypes.INIT_PROGRAMS_FAILURE:
       return {

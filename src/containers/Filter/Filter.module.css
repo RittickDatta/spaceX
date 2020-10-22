@@ -38,3 +38,23 @@
 .successful_landing_block {
 
 }
+
+.reset_filters {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.reset_filter_button {
+    padding: 15px 10px;
+    border-radius: 5px;
+    background: #328d32;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: 1s;
+    border: none;
+}
+.reset_filter_button:hover {
+    cursor: pointer;
+    background: #2a772a;
+}

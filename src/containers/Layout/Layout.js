@@ -26,7 +26,7 @@ class Layout extends Component {
                 </main>
                 <footer>
                     <div className={classes.developedBy}>
-
+                        Developed by Rittick Datta
                     </div>
                 </footer>
             </React.Fragment>

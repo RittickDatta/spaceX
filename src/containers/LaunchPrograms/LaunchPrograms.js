@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 import LaunchProgram from './LaunchProgram/LaunchProgram';
 import * as classes from './LaunchPrograms.module.css';
+import Spinner from '../../components/UI/Spinner/Spinner';
+import Message from '../../components/UI/Message/Message';
 
 class LaunchPrograms extends Component {
     componentDidMount(){
@@ -12,7 +14,11 @@ class LaunchPrograms extends Component {
     render(){
         let launchProgs;
         if(this.props.launchPrograms.length === 0){
-            launchProgs = 'Loading...'
+            if(!this.props.firstLoad){
+                launchProgs = <Message message="No programs meet the filter criteria. Please use 'RESET FILTERS' button."/>
+            } else{
+                launchProgs = <Spinner />
+            }
         } else {
             launchProgs = this.props.launchPrograms.map(prog => {
                 return <LaunchProgram key={Math.random()} prog={prog}/>
@@ -31,7 +37,8 @@ const mapStateToProps = state => {
         launchYear: state.launchYear,
         successfullLaunch: state.successfullLaunch,
         successfullLanding: state.successfullLanding,
-        loading: state.loading
+        loading: state.loading,
+        firstLoad: state.firstLoad
     }
 }
 

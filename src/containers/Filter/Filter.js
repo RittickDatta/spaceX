@@ -40,6 +40,8 @@ class Filter extends Component {
       );
     });
 
+   
+
     return (
       <React.Fragment>
 
@@ -56,6 +58,11 @@ class Filter extends Component {
           <div className={classes.successful_landing_block}>
             <p className={classes.FilterTitle}>Successful Landing</p>
             <div className={classes.changeDirection}>{landingControls}</div>
+          </div>
+          <div className={classes.reset_filters}>
+             <button className={classes.reset_filter_button}
+              onClick={() => this.props.onClearFilters()}
+             >Reset Filters</button>
           </div>
         </div>
       </React.Fragment>
