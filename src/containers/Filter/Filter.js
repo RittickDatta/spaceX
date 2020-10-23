@@ -26,6 +26,7 @@ class Filter extends Component {
           key={flag}
           clickHandler={this.props.onFilterBySuccessfulLaunch}
           data={flag}
+          forLaunch={true}
         />
       );
     });
@@ -49,7 +50,7 @@ class Filter extends Component {
           <div className={classes.filters_title}>FILTERS</div>
           <div className={classes.launch_year_block}>
             <p className={classes.FilterTitle}>Launch Year</p>
-            {yearControls}
+            <div className={classes.yearDisplay}>{yearControls}</div>
           </div>
           <div className={classes.successful_launch_block}>
             <p className={classes.FilterTitle}>Successful Launch</p>

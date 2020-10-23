@@ -16,7 +16,7 @@ const launchProgram = (props) => (
         </p>
         <ul className={classes.ProgramSubDetailValue}>
           {props.prog.mission_id.length > 0 ? props.prog.mission_id.map((m_id) => (
-            <li>{m_id}</li>
+            <li key={m_id}>{m_id}</li>
           )) : 'No Ids Available'}
         </ul>
           <p className={classes.ProgramSubDetailKey}>Launch Year: <span className={classes.ProgramSubDetailValue}>{props.prog.launch_year}</span></p>

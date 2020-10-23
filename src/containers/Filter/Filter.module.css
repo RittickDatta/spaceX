@@ -26,8 +26,12 @@
 
 .changeDirection {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.yearDisplay {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .successful_launch_block {

@@ -12,8 +12,8 @@ let initalState = {
   launchPrograms: [],
   launchProgramsBackup: [],
   launchYear: '2006',
-  successfullLaunch: false,
-  successfullLanding: false,
+  successfullLaunch: null,
+  successfullLanding: null,
   loading: false,
   firstLoad: true
 };
@@ -98,8 +98,8 @@ const reducer = (state = initalState, action) => {
         ...state,
         launchPrograms: state.launchProgramsBackup,
         launchYear: '2006',
-        successfullLaunch: true,
-        successfullLanding: true,
+        successfullLaunch: null,
+        successfullLanding: null,
         loading: false,
       };
     default:
