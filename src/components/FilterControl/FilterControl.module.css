@@ -17,14 +17,13 @@
     background-color: darkgreen;
 }
 
-@media (min-width: 500px) and (max-width: 900px) {
+/* @media (min-width: 500px) and (max-width: 900px) {
     .filterControl {
         padding: 5px;
         border-radius: 7px;
         color: black;
         background-color: lightgreen;
         margin: 3px;
-        width: auto;
         font-size: 12px;
     }
-}
+} */

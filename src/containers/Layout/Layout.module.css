@@ -56,4 +56,13 @@ footer {
   }
 }
 
-
+/* @media (min-width: 501px) and (max-width: 900px) {
+  .filter_container {
+    width: 24%;
+  }
+  
+  .launchPrograms_container {
+    width: 575px;
+    max-width: 575px;
+  }
+} */
