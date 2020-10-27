@@ -11,7 +11,7 @@ let initalState = {
   years: years,
   launchPrograms: [],
   launchProgramsBackup: [],
-  launchYear: '2006',
+  launchYear: '2020',
   successfullLaunch: null,
   successfullLanding: null,
   loading: false,
@@ -97,7 +97,7 @@ const reducer = (state = initalState, action) => {
       return {
         ...state,
         launchPrograms: state.launchProgramsBackup,
-        launchYear: '2006',
+        launchYear: '2020',
         successfullLaunch: null,
         successfullLanding: null,
         loading: false,

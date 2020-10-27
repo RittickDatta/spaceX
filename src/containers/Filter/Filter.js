@@ -47,9 +47,9 @@ class Filter extends Component {
       <React.Fragment>
 
         <div className={classes.filters}>
-          <div className={classes.filters_title}>FILTERS</div>
+          <div className={classes.filters_title}>Filters</div>
           <div className={classes.launch_year_block}>
-            <p className={classes.FilterTitle}>Launch Year</p>
+            <p className={classes.FilterTitle}>Filter Years</p>
             <div className={classes.yearDisplay}>{yearControls}</div>
           </div>
           <div className={classes.successful_launch_block}>
